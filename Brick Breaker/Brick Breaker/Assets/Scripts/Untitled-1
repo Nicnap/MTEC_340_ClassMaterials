@@ -1,0 +1,13 @@
+
+#include <stdio.h>
+
+int main(){
+  int x = 1;
+  
+  if (x == 1)
+    printf("x is equal to one.\n");
+  else {
+    printf("For comparison use '=='.\n");
+    printf("'=' is an assignment operator.\n");
+  }
+}

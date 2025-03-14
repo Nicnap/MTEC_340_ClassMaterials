@@ -15,7 +15,7 @@ public class BrickBehavior : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
@@ -28,6 +28,7 @@ public class BrickBehavior : MonoBehaviour
                 Debug.LogError("Break sound or AudioSource is missing!");
             }
 
+            // The following code became necessary because for some reason I cannot explain, the brick reflection code wouldn't work without it so here we are.
             // Delay destruction to allow sound to play
             GetComponent<Collider2D>().enabled = false; // Disable collider to prevent multiple triggers
             GetComponent<SpriteRenderer>().enabled = false; // Hide brick
